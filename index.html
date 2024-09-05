@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Biglietto Gre</title>
+    <title>Biglietto</title>
     <link rel="icon" href="https://github.com/TommyTommy10/Biglietto.Kia/raw/main/IMG_1390_Original.jpg" type="image/png">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&family=Selima&display=swap');
@@ -14,7 +14,7 @@
             padding: 0;
             background: linear-gradient(90deg, #5170ff, #ff66c4);
             color: #fff;
-            overflow: hidden;
+            overflow: hidden; /* Evita lo scorrimento della pagina */
         }
         .container {
             margin: 50px auto;
@@ -22,37 +22,22 @@
             background-color: rgba(255, 255, 255, 0.8);
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            max-width: 90%;
+            max-width: 90%; /* Riduce la larghezza massima */
         }
         h1 {
             font-family: 'Selima', cursive;
-            font-size: 2.5em;
+            font-size: 2.5em; /* Riduce la dimensione del font */
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-            margin-bottom: 20px;
-        }
-        .scrolling-text {
-            font-size: 1.5em;
-            white-space: nowrap;
-            overflow: hidden;
-            box-sizing: border-box;
-        }
-        .scrolling-text span {
-            display: inline-block;
-            padding-left: 100%;
-            animation: scroll 10s linear infinite;
-        }
-        @keyframes scroll {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-100%); }
+            margin-bottom: 20px; /* Aggiunge margine inferiore */
         }
         .card-container {
-            margin-top: 20px; /* Riduci la distanza */
+            margin-top: 20px; /* Aggiunge margine superiore */
         }
         .card {
             perspective: 1000px;
             margin: 0 auto;
             width: 100%;
-            max-width: 300px;
+            max-width: 300px; /* Riduce la larghezza massima */
         }
         .card-inner {
             position: relative;
@@ -105,14 +90,25 @@
                 max-width: 100%;
             }
         }
+        .resource-list {
+            text-align: left;
+            margin-top: 20px;
+        }
+        .resource-item {
+            margin-bottom: 10px;
+        }
+        .resource-item a {
+            color: #5170ff;
+            text-decoration: none;
+        }
+        .resource-item a:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Buon Compleanno, Gre!</h1>
-        <div class="scrolling-text" id="scrolling-text">
-            <span>Tanti auguri, Gre! 🎉🎂</span>
-        </div>
+        <h1>Buon Compleanno!</h1>
     </div>
     <div class="card-container">
         <div class="card" id="card">
@@ -130,14 +126,29 @@
     </div>
     <div id="resources" class="container" style="display:none;">
         <h1>Risorse per la Prima Superiore</h1>
-        <p>Qui puoi trovare alcune risorse utili per il tuo primo anno di scuola superiore, Gre!</p>
-        <!-- Aggiungi qui le risorse utili -->
+        <p>Qui puoi trovare alcune risorse utili per il tuo primo anno di scuola superiore!</p>
+        <div class="resource-list">
+            <div class="resource-item">
+                <a href="https://www.khanacademy.org/" target="_blank">Khan Academy</a> - Una piattaforma educativa con lezioni su vari argomenti.
+            </div>
+            <div class="resource-item">
+                <a href="https://www.coursera.org/" target="_blank">Coursera</a> - Corsi online gratuiti e a pagamento su una vasta gamma di argomenti.
+            </div>
+            <div class="resource-item">
+                <a href="https://www.edx.org/" target="_blank">edX</a> - Corsi online offerti da università di tutto il mondo.
+            </div>
+            <div class="resource-item">
+                <a href="https://www.duolingo.com/" target="_blank">Duolingo</a> - Un'app per imparare nuove lingue in modo divertente.
+            </div>
+            <div class="resource-item">
+                <a href="https://www.codecademy.com/" target="_blank">Codecademy</a> - Una piattaforma per imparare a programmare.
+            </div>
+        </div>
     </div>
     <script>
         const card = document.getElementById('card');
         const cardInner = document.getElementById('card-inner');
         const resources = document.getElementById('resources');
-        const scrollingText = document.getElementById('scrolling-text');
         const resourcesButton = document.getElementById('resources-button');
         let startX;
         let rotation = 0;
@@ -149,15 +160,14 @@
         card.addEventListener('touchend', (e) => {
             const endX = e.changedTouches[0].clientX;
             if (startX > endX - 50) {
-                rotation -= 180;
+                rotation -= 180; // Inverte il senso di rotazione
             } else if (startX < endX + 50) {
-                rotation += 180;
+                rotation += 180; // Inverte il senso di rotazione
             }
             cardInner.style.transform = `rotateY(${rotation}deg)`;
         });
 
         resourcesButton.addEventListener('click', () => {
-            scrollingText.style.display = 'none';
             card.style.display = 'none';
             resources.style.display = 'block';
         });
