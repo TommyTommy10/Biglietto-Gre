@@ -46,7 +46,7 @@
             100% { transform: translateX(-100%); }
         }
         .card-container {
-            margin-top: 5px; /* Dimezza la distanza */
+            margin-top: 20px; /* Riduci la distanza */
         }
         .card {
             perspective: 1000px;
@@ -71,11 +71,13 @@
         }
         .card-back {
             transform: rotateY(180deg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         .button {
             display: inline-block;
             padding: 10px 20px;
-            margin-top: 20px;
             background-color: rgba(255, 255, 255, 0.8);
             color: #5170ff;
             border: none;
@@ -119,7 +121,9 @@
                     <img src="https://github.com/TommyTommy10/Biglietto.Kia/raw/main/Biglietto.png" alt="Biglietto di Compleanno">
                 </div>
                 <div class="card-back">
-                    <a href="#resources" class="button" id="resources-button">Vai alle risorse</a>
+                    <div class="button-container">
+                        <a href="#resources" class="button" id="resources-button">Vai alle risorse</a>
+                    </div>
                 </div>
             </div>
         </div>
