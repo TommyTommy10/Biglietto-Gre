@@ -105,7 +105,7 @@
 <body>
     <div class="container">
         <h1>Buon Compleanno, Gre!</h1>
-        <div class="scrolling-text">
+        <div class="scrolling-text" id="scrolling-text">
             <span>Auguri di cuore, Gre! 🎉🎂</span>
         </div>
         <div class="card" id="card">
@@ -114,8 +114,7 @@
                     <img src="https://github.com/TommyTommy10/Biglietto.Kia/raw/main/Biglietto.png" alt="Biglietto di Compleanno">
                 </div>
                 <div class="card-back">
-                    <p>Mi mancherai molto. Mi mancherà quando ti arrabbi, quando litighiamo, quando ci divertiamo, quando scherziamo… Mi mancherà tutto di te. Ogni volta che discutevamo mi lamentavo che succedeva spesso, ma nel profondo, anche se ti avevo contro, non mi dispiaceva perché stavo creando un ricordo di cui non mi sarei dimenticato. Mi hai reso l'ultimo anno di medie indimenticabile. Ricordati sempre che se hai bisogno io ci sono, non importa cosa sia successo, anche se abbiamo litigato, qualsiasi cosa succeda io ci sono. Non dimenticartelo mai. Questo spero non sia un addio, ma un arrivederci.</p>
-                    <a href="#resources" class="button">Vai alle risorse</a>
+                    <a href="#resources" class="button" id="resources-button">Vai alle risorse</a>
                 </div>
             </div>
         </div>
@@ -129,6 +128,8 @@
         const card = document.getElementById('card');
         const cardInner = document.getElementById('card-inner');
         const resources = document.getElementById('resources');
+        const scrollingText = document.getElementById('scrolling-text');
+        const resourcesButton = document.getElementById('resources-button');
         let startX;
         let rotation = 0;
 
@@ -146,7 +147,8 @@
             cardInner.style.transform = `rotateY(${rotation}deg)`;
         });
 
-        document.querySelector('.button').addEventListener('click', () => {
+        resourcesButton.addEventListener('click', () => {
+            scrollingText.style.display = 'none';
             resources.style.display = 'block';
         });
     </script>
