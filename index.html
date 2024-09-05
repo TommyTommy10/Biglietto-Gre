@@ -46,6 +46,9 @@
             0% { transform: translateX(0); }
             100% { transform: translateX(-100%); }
         }
+        .card-container {
+            margin-top: 10px; /* Riduce la distanza */
+        }
         .card {
             perspective: 1000px;
             margin: 0 auto;
@@ -125,14 +128,16 @@
         <div class="scrolling-text" id="scrolling-text">
             <span>Tanti auguri, Gre! 🎉🎂</span>
         </div>
-        <div class="card" id="card">
-            <div class="card-inner" id="card-inner">
-                <div class="card-front">
-                    <img src="https://github.com/TommyTommy10/Biglietto.Kia/raw/main/Biglietto.png" alt="Biglietto di Compleanno">
-                </div>
-                <div class="card-back">
-                    <div class="button-container">
-                        <a href="#resources" class="button" id="resources-button">Vai alle risorse</a>
+        <div class="card-container">
+            <div class="card" id="card">
+                <div class="card-inner" id="card-inner">
+                    <div class="card-front">
+                        <img src="https://github.com/TommyTommy10/Biglietto.Kia/raw/main/Biglietto.png" alt="Biglietto di Compleanno">
+                    </div>
+                    <div class="card-back">
+                        <div class="button-container">
+                            <a href="#resources" class="button" id="resources-button">Vai alle risorse</a>
+                        </div>
                     </div>
                 </div>
             </div>
