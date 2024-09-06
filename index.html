@@ -17,8 +17,8 @@
             overflow-y: auto; /* Permette lo scorrimento verticale della pagina */
         }
         .container {
-            margin: 20px auto; /* Riduce il margine */
-            padding: 10px; /* Riduce il padding */
+            margin: 50px auto;
+            padding: 20px;
             background-color: rgba(255, 255, 255, 0.8);
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -26,16 +26,16 @@
         }
         h1 {
             font-family: 'Selima', cursive;
-            font-size: 2em; /* Riduce la dimensione del font */
+            font-size: 2.5em; /* Mantiene la dimensione del font */
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-            margin-bottom: 10px; /* Riduce il margine inferiore */
+            margin-bottom: 20px; /* Mantiene il margine inferiore */
         }
         .scrolling-text {
-            font-size: 1.2em; /* Riduce la dimensione del font */
+            font-size: 1.5em; /* Mantiene la dimensione del font */
             white-space: nowrap;
             overflow: hidden;
             box-sizing: border-box;
-            margin-bottom: 10px; /* Riduce il margine inferiore */
+            margin-bottom: 20px; /* Mantiene il margine inferiore */
         }
         .scrolling-text span {
             display: inline-block;
@@ -47,13 +47,13 @@
             100% { transform: translateX(-100%); }
         }
         .card-container {
-            margin-top: 10px; /* Riduce la distanza */
+            margin-top: 10px; /* Mantiene la distanza */
         }
         .card {
             perspective: 1000px;
             margin: 0 auto;
             width: 100%;
-            max-width: 300px; /* Riduce la larghezza massima */
+            max-width: 300px; /* Mantiene la larghezza massima */
         }
         .card-inner {
             position: relative;
@@ -66,7 +66,7 @@
             width: 100%;
             backface-visibility: hidden;
             border-radius: 10px;
-            padding: 10px; /* Riduce il padding */
+            padding: 20px; /* Mantiene il padding */
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             box-sizing: border-box;
         }
@@ -78,14 +78,14 @@
         }
         .button {
             display: inline-block;
-            padding: 5px 10px; /* Riduce il padding */
+            padding: 10px 20px; /* Mantiene il padding */
             background-color: rgba(255, 255, 255, 0.8);
             color: #5170ff;
             border: none;
             border-radius: 10px;
             cursor: pointer;
             text-decoration: none;
-            font-size: 0.8em; /* Riduce la dimensione del font */
+            font-size: 1em; /* Mantiene la dimensione del font */
         }
         .button:hover {
             background-color: rgba(255, 255, 255, 1);
@@ -97,14 +97,24 @@
         }
         @media only screen and (max-width: 600px) {
             .container {
-                padding: 5px; /* Riduce il padding */
+                padding: 10px;
             }
             h1 {
-                font-size: 1.5em; /* Riduce la dimensione del font */
+                font-size: 2em;
             }
             .card {
                 max-width: 100%;
             }
+        }
+        .resource-container {
+            margin: 20px auto; /* Riduce il margine */
+            padding: 10px; /* Riduce il padding */
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 90%; /* Riduce la larghezza massima */
+            max-height: 80vh; /* Limita l'altezza massima */
+            overflow-y: auto; /* Permette lo scorrimento verticale */
         }
         .resource-list {
             text-align: left;
@@ -144,7 +154,7 @@
             </div>
         </div>
     </div>
-    <div id="resources" class="container" style="display:none;">
+    <div id="resources" class="resource-container" style="display:none;">
         <h1>Risorse per la Prima Superiore</h1>
         <p>Qui puoi trovare alcune risorse utili per il tuo primo anno di scuola superiore!</p>
         <div class="resource-list">
