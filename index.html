@@ -95,35 +95,6 @@
             height: auto;
             border-radius: 10px;
         }
-        .music-icon {
-            position: fixed;
-            top: 10px;
-            right: 10px;
-            cursor: pointer;
-            font-size: 2em;
-            color: #fff;
-        }
-        .music-player {
-            display: none;
-            position: fixed;
-            top: 50px;
-            right: 10px;
-            background-color: rgba(255, 255, 255, 0.9);
-            padding: 10px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            max-width: 300px;
-        }
-        .music-player ul {
-            list-style: none;
-            padding: 0;
-        }
-        .music-player li {
-            margin-bottom: 10px;
-        }
-        .music-player button {
-            margin: 5px;
-        }
         @media only screen and (max-width: 600px) {
             .container {
                 padding: 10px;
@@ -204,13 +175,34 @@
             </div>
         </div>
     </div>
-    <div class="music-icon" id="music-icon">🎵</div>
-    <div class="music-player" id="music-player">
-        <ul id="playlist">
-            <li>Canzone 1</li>
-            <li>Canzone 2</li>
-            <li>Canzone 3</li>
-        </ul>
-        <div>
-            <button id="prev">Precedente</button>
-            <button id="play-pause">Play/P
+    <script>
+        const card = document.getElementById('card');
+        const cardInner = document.getElementById('card-inner');
+        const resources = document.getElementById('resources');
+        const scrollingText = document.getElementById('scrolling-text');
+        const resourcesButton = document.getElementById('resources-button');
+        let startX;
+        let rotation = 0;
+
+        card.addEventListener('touchstart', (e) => {
+            startX = e.touches[0].clientX;
+        });
+
+        card.addEventListener('touchend', (e) => {
+            const endX = e.changedTouches[0].clientX;
+            if (startX > endX - 50) {
+                rotation -= 180; // Inverte il senso di rotazione
+            } else if (startX < endX + 50) {
+                rotation += 180; // Inverte il senso di rotazione
+            }
+            cardInner.style.transform = `rotateY(${rotation}deg)`;
+        });
+
+        resourcesButton.addEventListener('click', () => {
+            scrollingText.style.display = 'none';
+            card.style.display = 'none';
+            resources.style.display = 'block';
+        });
+    </script>
+</body>
+</html>
