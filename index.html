@@ -14,11 +14,11 @@
             padding: 0;
             background: linear-gradient(90deg, #5170ff, #ff66c4);
             color: #fff;
-            overflow: hidden; /* Evita lo scorrimento della pagina */
+            overflow-y: auto; /* Permette lo scorrimento verticale della pagina */
         }
         .container {
-            margin: 50px auto;
-            padding: 20px;
+            margin: 20px auto; /* Riduce il margine */
+            padding: 10px; /* Riduce il padding */
             background-color: rgba(255, 255, 255, 0.8);
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -26,16 +26,16 @@
         }
         h1 {
             font-family: 'Selima', cursive;
-            font-size: 2.5em; /* Riduce la dimensione del font */
+            font-size: 2em; /* Riduce la dimensione del font */
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-            margin-bottom: 20px; /* Aggiunge margine inferiore */
+            margin-bottom: 10px; /* Riduce il margine inferiore */
         }
         .scrolling-text {
-            font-size: 1.5em;
+            font-size: 1.2em; /* Riduce la dimensione del font */
             white-space: nowrap;
             overflow: hidden;
             box-sizing: border-box;
-            margin-bottom: 20px; /* Aggiunge margine inferiore */
+            margin-bottom: 10px; /* Riduce il margine inferiore */
         }
         .scrolling-text span {
             display: inline-block;
@@ -47,7 +47,7 @@
             100% { transform: translateX(-100%); }
         }
         .card-container {
-            margin-top: 2px; /* Riduce la distanza */
+            margin-top: 10px; /* Riduce la distanza */
         }
         .card {
             perspective: 1000px;
@@ -66,7 +66,7 @@
             width: 100%;
             backface-visibility: hidden;
             border-radius: 10px;
-            padding: 20px;
+            padding: 10px; /* Riduce il padding */
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             box-sizing: border-box;
         }
@@ -78,14 +78,14 @@
         }
         .button {
             display: inline-block;
-            padding: 10px 20px;
+            padding: 5px 10px; /* Riduce il padding */
             background-color: rgba(255, 255, 255, 0.8);
             color: #5170ff;
             border: none;
             border-radius: 10px;
             cursor: pointer;
             text-decoration: none;
-            font-size: 1em;
+            font-size: 0.8em; /* Riduce la dimensione del font */
         }
         .button:hover {
             background-color: rgba(255, 255, 255, 1);
@@ -97,10 +97,10 @@
         }
         @media only screen and (max-width: 600px) {
             .container {
-                padding: 10px;
+                padding: 5px; /* Riduce il padding */
             }
             h1 {
-                font-size: 2em;
+                font-size: 1.5em; /* Riduce la dimensione del font */
             }
             .card {
                 max-width: 100%;
@@ -108,14 +108,15 @@
         }
         .resource-list {
             text-align: left;
-            margin-top: 20px;
+            margin-top: 10px; /* Riduce il margine superiore */
         }
         .resource-item {
-            margin-bottom: 10px;
+            margin-bottom: 5px; /* Riduce il margine inferiore */
         }
         .resource-item a {
             color: #5170ff;
             text-decoration: none;
+            font-size: 0.9em; /* Riduce la dimensione del font */
         }
         .resource-item a:hover {
             text-decoration: underline;
@@ -143,7 +144,7 @@
             </div>
         </div>
     </div>
-    <div id="resources" class="container" style="display:none; overflow-y: auto; max-height: 80vh;">
+    <div id="resources" class="container" style="display:none;">
         <h1>Risorse per la Prima Superiore</h1>
         <p>Qui puoi trovare alcune risorse utili per il tuo primo anno di scuola superiore!</p>
         <div class="resource-list">
