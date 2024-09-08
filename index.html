@@ -95,14 +95,6 @@
             height: auto;
             border-radius: 10px;
         }
-        .music-icon {
-            position: fixed;
-            top: 10px;
-            right: 10px;
-            cursor: pointer;
-            font-size: 2em;
-            color: #fff;
-        }
         @media only screen and (max-width: 600px) {
             .container {
                 padding: 10px;
@@ -183,14 +175,12 @@
             </div>
         </div>
     </div>
-    <div class="music-icon" id="music-icon">🎵</div>
     <script>
         const card = document.getElementById('card');
         const cardInner = document.getElementById('card-inner');
         const resources = document.getElementById('resources');
         const scrollingText = document.getElementById('scrolling-text');
         const resourcesButton = document.getElementById('resources-button');
-        const musicIcon = document.getElementById('music-icon');
         let startX;
         let rotation = 0;
 
@@ -203,4 +193,16 @@
             if (startX > endX - 50) {
                 rotation -= 180; // Inverte il senso di rotazione
             } else if (startX < endX + 50) {
-                rotation += 180;
+                rotation += 180; // Inverte il senso di rotazione
+            }
+            cardInner.style.transform = `rotateY(${rotation}deg)`;
+        });
+
+        resourcesButton.addEventListener('click', () => {
+            scrollingText.style.display = 'none';
+            card.style.display = 'none';
+            resources.style.display = 'block';
+        });
+    </script>
+</body>
+</html>
