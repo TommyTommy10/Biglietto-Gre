@@ -46,14 +46,14 @@
 <body>
     <div id="countdown"></div>
     <div id="message">Buon Compleanno!!!</div>
-    <button id="linkButton" onclick="window.location.href='https://www.example.com'">Vai al link</button>
+    <button id="linkButton" onclick="window.location.href='https://tommytommy10.github.io/Biglietto.Gre.test/'">Clicca qui!</button>
 
     <script>
         const countdownElement = document.getElementById('countdown');
         const messageElement = document.getElementById('message');
         const linkButton = document.getElementById('linkButton');
 
-        const targetDate = new Date('2024-09-23T22:03:50').getTime();
+        const targetDate = new Date('2024-09-23T22:07:50').getTime();
 
         const updateCountdown = () => {
             const now = new Date().getTime();
@@ -71,7 +71,7 @@
             const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
             const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-            countdownElement.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+            countdownElement.innerHTML = `${days} Giorni ${hours} Ore ${minutes} Minuti ${seconds} Secondi`;
         };
 
         setInterval(updateCountdown, 1000);
