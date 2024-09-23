@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Countdown</title>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Selima&display=swap" rel="stylesheet">
     <style>
         body {
             background-color: red;
@@ -13,36 +15,45 @@
             align-items: center;
             height: 100vh;
             flex-direction: column;
-            font-family: Arial, sans-serif;
+            font-family: 'Raleway', sans-serif;
+            text-align: center;
         }
         #countdown {
             font-size: 3em;
+            margin-bottom: 20px;
         }
-        #message, #linkButton {
+        #message {
             display: none;
-            margin-top: 20px;
+            font-family: 'Selima', cursive;
+            font-size: 4em;
         }
         #linkButton {
+            display: none;
+            margin-top: 20px;
             padding: 10px 20px;
             background-color: white;
             color: red;
             border: none;
             cursor: pointer;
             font-size: 1em;
+            font-family: 'Raleway', sans-serif;
+        }
+        #linkButton:hover {
+            background-color: #f0f0f0;
         }
     </style>
 </head>
 <body>
     <div id="countdown"></div>
     <div id="message">Buon Compleanno!!!</div>
-    <button id="linkButton" onclick="window.location.href='https://tommytommy10.github.io/Biglietto.Gre.test/'">Vai al link</button>
+    <button id="linkButton" onclick="window.location.href='https://www.example.com'">Vai al link</button>
 
     <script>
         const countdownElement = document.getElementById('countdown');
         const messageElement = document.getElementById('message');
         const linkButton = document.getElementById('linkButton');
 
-        const targetDate = new Date('2024-09-23T21:59:00').getTime();
+        const targetDate = new Date('2024-09-23T22:03:50').getTime();
 
         const updateCountdown = () => {
             const now = new Date().getTime();
