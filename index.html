@@ -3,206 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Biglietto</title>
-    <link rel="icon" href="https://github.com/TommyTommy10/Biglietto.Kia/raw/main/IMG_1390_Original.jpg" type="image/png">
+    <title>Countdown</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&family=Selima&display=swap');
         body {
-            font-family: 'Raleway', sans-serif;
-            text-align: center;
-            margin: 0;
-            padding: 0;
-            background: linear-gradient(90deg, #5170ff, #ff66c4);
-            color: #fff;
-            overflow-y: auto; /* Permette lo scorrimento verticale della pagina */
-        }
-        .container {
-            margin: 50px auto;
-            padding: 20px;
-            background-color: rgba(255, 255, 255, 0.8);
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            max-width: 90%; /* Riduce la larghezza massima */
-        }
-        h1 {
-            font-family: 'Selima', cursive;
-            font-size: 2.5em; /* Mantiene la dimensione del font */
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-            margin-bottom: 20px; /* Mantiene il margine inferiore */
-        }
-        .scrolling-text {
-            font-size: 1.5em; /* Mantiene la dimensione del font */
-            white-space: nowrap;
-            overflow: hidden;
-            box-sizing: border-box;
-            margin-bottom: 20px; /* Mantiene il margine inferiore */
-        }
-        .scrolling-text span {
-            display: inline-block;
-            padding-left: 100%;
-            animation: scroll 10s linear infinite;
-        }
-        @keyframes scroll {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-100%); }
-        }
-        .card-container {
-            margin-top: 0; /* Rimuove la distanza */
-        }
-        .card {
-            perspective: 1000px;
-            margin: 0 auto;
-            width: 100%;
-            max-width: 300px; /* Mantiene la larghezza massima */
-        }
-        .card-inner {
-            position: relative;
-            width: 100%;
-            transform-style: preserve-3d;
-            transition: transform 0.6s;
-        }
-        .card-front, .card-back {
-            position: absolute;
-            width: 100%;
-            backface-visibility: hidden;
-            border-radius: 10px;
-            padding: 20px; /* Mantiene il padding */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            box-sizing: border-box;
-        }
-        .card-back {
-            transform: rotateY(180deg);
+            background-color: red;
+            color: white;
             display: flex;
-            align-items: center;
             justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            font-family: Arial, sans-serif;
         }
-        .button {
-            display: inline-block;
-            padding: 10px 20px; /* Mantiene il padding */
-            background-color: rgba(255, 255, 255, 0.8);
-            color: #5170ff;
+        #countdown {
+            font-size: 3em;
+        }
+        #message, #linkButton {
+            display: none;
+            margin-top: 20px;
+        }
+        #linkButton {
+            padding: 10px 20px;
+            background-color: white;
+            color: red;
             border: none;
-            border-radius: 10px;
             cursor: pointer;
-            text-decoration: none;
-            font-size: 1em; /* Mantiene la dimensione del font */
-        }
-        .button:hover {
-            background-color: rgba(255, 255, 255, 1);
-        }
-        img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 10px;
-        }
-        @media only screen and (max-width: 600px) {
-            .container {
-                padding: 10px;
-            }
-            h1 {
-                font-size: 2em;
-            }
-            .card {
-                max-width: 100%;
-            }
-        }
-        .resource-container {
-            margin: 20px auto; /* Riduce il margine */
-            padding: 10px; /* Riduce il padding */
-            background-color: rgba(255, 255, 255, 0.8);
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            max-width: 90%; /* Riduce la larghezza massima */
-            max-height: 80vh; /* Limita l'altezza massima */
-            overflow-y: auto; /* Permette lo scorrimento verticale */
-        }
-        .resource-list {
-            text-align: left;
-            margin-top: 10px; /* Riduce il margine superiore */
-        }
-        .resource-item {
-            margin-bottom: 5px; /* Riduce il margine inferiore */
-        }
-        .resource-item a {
-            color: #5170ff;
-            text-decoration: none;
-            font-size: 0.9em; /* Riduce la dimensione del font */
-        }
-        .resource-item a:hover {
-            text-decoration: underline;
+            font-size: 1em;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Buon Compleanno!</h1>
-        <div class="scrolling-text" id="scrolling-text">
-            <span>Tanti auguri, Gre! 🎉🎂</span>
-        </div>
-    </div>
-    <div class="card-container">
-        <div class="card" id="card">
-            <div class="card-inner" id="card-inner">
-                <div class="card-front">
-                    <img src="https://github.com/TommyTommy10/Biglietto.Kia/raw/main/Biglietto.png" alt="Biglietto di Compleanno">
-                </div>
-                <div class="card-back">
-                    <div class="button-container">
-                        <a href="#resources" class="button" id="resources-button">Vai alle risorse</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div id="resources" class="resource-container" style="display:none;">
-        <h1>Risorse per la Prima Superiore</h1>
-        <p>Qui puoi trovare alcune risorse utili per il tuo primo anno di scuola superiore!</p>
-        <div class="resource-list">
-            <div class="resource-item">
-                <a href="https://www.khanacademy.org/" target="_blank">Khan Academy</a> - Una piattaforma educativa con lezioni su vari argomenti.
-            </div>
-            <div class="resource-item">
-                <a href="https://www.coursera.org/" target="_blank">Coursera</a> - Corsi online gratuiti e a pagamento su una vasta gamma di argomenti.
-            </div>
-            <div class="resource-item">
-                <a href="https://www.edx.org/" target="_blank">edX</a> - Corsi online offerti da università di tutto il mondo.
-            </div>
-            <div class="resource-item">
-                <a href="https://www.duolingo.com/" target="_blank">Duolingo</a> - Un'app per imparare nuove lingue in modo divertente.
-            </div>
-            <div class="resource-item">
-                <a href="https://www.codecademy.com/" target="_blank">Codecademy</a> - Una piattaforma per imparare a programmare.
-            </div>
-        </div>
-    </div>
+    <div id="countdown"></div>
+    <div id="message">Buon Compleanno!!!</div>
+    <button id="linkButton" onclick="window.location.href='https://www.example.com'">Vai al link</button>
+
     <script>
-        const card = document.getElementById('card');
-        const cardInner = document.getElementById('card-inner');
-        const resources = document.getElementById('resources');
-        const scrollingText = document.getElementById('scrolling-text');
-        const resourcesButton = document.getElementById('resources-button');
-        let startX;
-        let rotation = 0;
+        const countdownElement = document.getElementById('countdown');
+        const messageElement = document.getElementById('message');
+        const linkButton = document.getElementById('linkButton');
 
-        card.addEventListener('touchstart', (e) => {
-            startX = e.touches[0].clientX;
-        });
+        const targetDate = new Date('2024-09-30T00:00:00').getTime();
 
-        card.addEventListener('touchend', (e) => {
-            const endX = e.changedTouches[0].clientX;
-            if (startX > endX - 50) {
-                rotation -= 180; // Inverte il senso di rotazione
-            } else if (startX < endX + 50) {
-                rotation += 180; // Inverte il senso di rotazione
+        const updateCountdown = () => {
+            const now = new Date().getTime();
+            const distance = targetDate - now;
+
+            if (distance < 0) {
+                countdownElement.style.display = 'none';
+                messageElement.style.display = 'block';
+                linkButton.style.display = 'block';
+                return;
             }
-            cardInner.style.transform = `rotateY(${rotation}deg)`;
-        });
 
-        resourcesButton.addEventListener('click', () => {
-            scrollingText.style.display = 'none';
-            card.style.display = 'none';
-            resources.style.display = 'block';
-        });
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            countdownElement.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+        };
+
+        setInterval(updateCountdown, 1000);
     </script>
 </body>
 </html>
