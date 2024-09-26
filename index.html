@@ -70,7 +70,7 @@
         const messageElement = document.getElementById('message');
         const linkButton = document.getElementById('linkButton');
 
-        const targetDate = new Date('2024-09-26T22:02:00').getTime();
+        const targetDate = new Date('2024-09-30T00:00:00').getTime();
 
         const updateCountdown = () => {
             const now = new Date().getTime();
@@ -88,7 +88,7 @@
             const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
             const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-            countdownElement.innerHTML = `${days} Giorni ${hours} Ore ${minutes} Minuti ${seconds}Secondi`;
+            countdownElement.innerHTML = `${days} Giorni ${hours} Ore ${minutes} Minuti ${seconds} Secondi`;
         };
 
         setInterval(updateCountdown, 1000);
